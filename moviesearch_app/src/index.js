@@ -10,7 +10,7 @@ import reducers from "./reducer";
 
 import Menu from './components/menu';
 
-//Connecting people with fun and entertainment
+//Connecting   people with fun and entertainment
 
 const App = () => {
     return (
