@@ -4,15 +4,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
+import './style.css'
 
 import reducers from "./reducer";
 
+import Menu from './components/menu';
 
+//Connecting people with fun and entertainment
 
 const App = () => {
     return (
         <div>
         
+            <Menu/>
+      
         </div>
     );
 };
