@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
-import './style.css';
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
 
-import reducers from "./reducers";
+import reducers from "./reducer";
 
 
 
 const App = () => {
     return (
         <div>
-            
+        
         </div>
     );
 };
