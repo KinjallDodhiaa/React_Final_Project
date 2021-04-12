@@ -15,7 +15,7 @@ import Menu from './components/menu';
 const App = () => {
     return (
         <div>
-        
+          <h1>hello</h1>
             <Menu/>
       
         </div>
