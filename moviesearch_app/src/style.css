@@ -18,7 +18,7 @@ body {
   transition: transform 0.5s linear;
   width: 100vw;
   min-height: 100vh;
-  padding: 50px;
+  padding: 5vh;
 }
 
 .main-container.show-nav {
@@ -84,34 +84,34 @@ nav {
 
 nav ul {
   list-style-type: none;
-  padding-left: 30px;
+  padding-left: 3vh;
 }
 
 nav ul li {
   text-transform: uppercase;
   color: #fff;
-  margin: 40px 0;
+  margin: 4vh 0;
   transform: translateX(-100%);
   transition: transform 0.4s ease-in;
 }
 
 nav ul li i {
   font-size: 20px;
-  margin-right: 10px;
+  margin-right: 1vh;
 }
 
 nav ul li + li {
-  margin-left: 15px;
+  margin-left: 1.5vh;
   transform: translateX(-150%);
 }
 
 nav ul li + li + li {
-  margin-left: 30px;
+  margin-left: 3vh;
   transform: translateX(-200%);
 }
 
 nav ul li + li + li + li{
-  margin-left: 50px;
+  margin-left: 5vh;
   transform: translateX(-250%);
 }
 
@@ -124,7 +124,7 @@ nav ul li + li + li + li{
 
 .content {
   max-width: 1000px;
-  margin: 50px auto;
+  margin: 5vh auto;
 }
 
 .content h1 {

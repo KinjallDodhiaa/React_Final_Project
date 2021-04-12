@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Container, Row, Carousel } from "react-bootstrap";
 
 const Menu = () => {
   const initState = {
@@ -11,7 +12,11 @@ const Menu = () => {
 
   return (
     <>
-      <div className={state.isActive ? "main-container show-nav" : "main-container"}>
+      <div
+        className={
+          state.isActive ? "main-container show-nav" : "main-container"
+        }
+      >
         <div className="circle-container">
           <div className="circle">
             <button id="close" onClick={() => setState({ isActive: false })}>
@@ -22,9 +27,7 @@ const Menu = () => {
             </button>
           </div>
         </div>
-
       </div>
-
       <nav>
         <ul>
           <li>

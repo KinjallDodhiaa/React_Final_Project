@@ -4,24 +4,28 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
-import './style.css'
+import './style.css';
+
 
 import reducers from "./reducer";
 
 import Menu from './components/menu';
+import Home from "./components/home";
 
-//Connecting people with fun and entertainment
+
+
+//Connecting   people with fun and entertainment
 
 const App = () => {
     return (
-        <div>
-          <h1>hello</h1>
-            <Menu/>
-      
-        </div>
+      <div>
+        <Home/>
+        <Menu/>
+      </div>
     );
 };
 
-ReactDOM.render(<Provider store={createStore(reducers, applyMiddleware(thunk))}>
+ReactDOM.render(
+<Provider store={createStore(reducers, applyMiddleware(thunk))}>
     <App />
 </Provider>, document.getElementById('root'))
