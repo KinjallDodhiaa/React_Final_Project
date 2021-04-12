@@ -15,9 +15,15 @@ import Menu from './components/menu';
 const App = () => {
     return (
         <div>
+<<<<<<< HEAD
 
             <Menu/>
 
+=======
+        
+            <Menu/>
+      
+>>>>>>> 0327661b53d0ab5600b7ee2390e273ecef54f455
         </div>
     );
 };
