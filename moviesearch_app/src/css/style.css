@@ -7,3 +7,29 @@
   font-family: "Lato", sans-serif;
 }
 
+body {
+  background-color: #030617;
+}
+
+/* #slider {
+  width: 80vw;
+  max-width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.img-slider {
+  width: 100vw;
+  height: 70vh;
+  /* border-radius: 20px; */
+  position: relative;
+  z-index: 0;
+}
+
+h1 {
+  color: rgb(238, 248, 248);
+  font-family: Courgette;
+  font-size: 2.4rem;
+  text-align: center;
+}
