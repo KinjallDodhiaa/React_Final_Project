@@ -23,6 +23,7 @@ import Series from "./pages/series";
 
 const App = () => {
 
+<<<<<<< HEAD
   return (
     <Router>
       <Navbar />
@@ -52,3 +53,33 @@ ReactDOM.render(
   document.getElementById("root")
 )
 
+=======
+    return (
+        <Router>
+            <Navbar />
+
+            <Switch>
+                <Route exact path="/">
+                    <Home />
+                </Route>
+                <Route path="/search">
+                    <Search />
+                </Route>
+                <Route path="/movies">
+                    <Movies />
+                </Route>
+                <Route path="/series">
+                    <Series />
+                </Route>
+            </Switch>
+        </Router>
+    );
+};
+
+ReactDOM.render(
+    <Provider store={createStore(reducers, applyMiddleware(thunk))}>
+        <App />
+    </Provider>,
+    document.getElementById("root")
+);
+>>>>>>> 0966ff84a928a89c3abe8a620605765fd82e3ed4
