@@ -16,6 +16,7 @@ import Movies from "./pages/movies";
 import Series from "./pages/series";
 
 const App = () => {
+
   return (
     <Router>
       <Navbar />
@@ -44,3 +45,19 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+    return (
+        <div>
+
+   
+            <Menu/>
+
+        </div>
+    );
+};
+
+ReactDOM.render(
+<Provider store={createStore(reducers, applyMiddleware(thunk))}>
+    <App />
+</Provider>, document.getElementById('root'))
+
