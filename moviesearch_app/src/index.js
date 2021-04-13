@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
+import { Router, Switch, Route } from "react-router";
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
 import './style.css';
@@ -10,7 +11,8 @@ import './style.css';
 import reducers from "./reducer";
 
 import Menu from './components/menu';
-import Home from "./components/home";
+import HomePage from "./pages/homepage";
+
 
 
 
@@ -18,10 +20,15 @@ import Home from "./components/home";
 
 const App = () => {
     return (
-      <div>
-        <Home/>
-        <Menu/>
-      </div>
+      <Router>
+        <Menu />
+        <Switch>
+          <Route exact path="/">
+            <HomePage/>
+          </Route>
+          
+        </Switch>
+      </Router>
     );
 };
 

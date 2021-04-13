@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Carousel } from "react-bootstrap";
+
 
 const Menu = () => {
   const initState = {
