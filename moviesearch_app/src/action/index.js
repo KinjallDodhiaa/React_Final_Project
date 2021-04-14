@@ -1,25 +1,25 @@
-import {getResults} from  '../api'
+import { getResults } from '../api'
 
 export const getMovieData = (movie) => {
 
 
-return dispatch => {
+  return dispatch => {
 
- dispatch ({
-        type: 'START',
-        payload: []
+    dispatch({
+      type: 'START',
+      payload: []
     })
- getResults(movie).then(data => {
-        dispatch({
-          type: "SUCCESS",
-          payload: data
-        })
- }).catch(error => {
-     dispatch({
+    getResults(movie).then(data => {
+      dispatch({
+        type: "SUCCESS",
+        payload: data
+      })
+    }).catch(error => {
+      dispatch({
         type: 'FAILED',
         payload: error
-     })
- })
-}
+      })
+    })
+  }
 
 }

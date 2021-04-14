@@ -1,4 +1,4 @@
-const getResults = (searchValue) => {
+export const getResults = (searchValue) => {
   return new Promise((resolve, reject) => {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`;
     fetch(url)
@@ -21,4 +21,3 @@ const getResults = (searchValue) => {
       });
   });
 };
-export default getResults;

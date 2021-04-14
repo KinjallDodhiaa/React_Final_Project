@@ -1,26 +1,26 @@
 import { combineReducers } from "redux";
 
 
-const searchResult = {
+let searchResult = {
   data: [],
   status: ''
 }
 
 const searchReducer = (results = searchResult, action) => {
-  
+
   console.log(action);
 
   switch (action.type) {
 
     case 'START':
-      searchResult = { data: [] , status :'START'};
-      return {...searchResult};
+      searchResult = { data: [], status: 'START' };
+      return { ...searchResult };
     case 'SUCCESS':
-      searchResult = { data: action.payload, status :'SUCCESS'};
-      return {...searchResult};
+      searchResult = { data: action.payload.Search, status: 'SUCCESS' };
+      return { ...searchResult };
     case 'FAILED':
-      searchResult = { data: [], status: 'FAILED'};
-      return {...searchResult};
+      searchResult = { data: [], status: 'FAILED' };
+      return { ...searchResult };
     default:
       return results;
   }
