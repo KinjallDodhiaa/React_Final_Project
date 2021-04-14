@@ -17,14 +17,14 @@ const Home = () => {
               </div>
             </CarouselItem>
 
-            <CarouselItem className="item" interval={3000} fade>
+            <CarouselItem className="item" interval={3000} fade='true'>
 
               <div>
                 <img className="img-slider" src="https://miro.medium.com/max/3000/0*9eO1lirHDIFk2blU.jpg" alt="" />
               </div>
             </CarouselItem>
 
-            <CarouselItem className="item" interval={3000} fade>
+            <CarouselItem className="item" interval={3000} fade='true'>
 
               <div >
                 <img className="img-slider" src="https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2019/09/01093013/Endgame-Lead-1.jpg" alt="" />
