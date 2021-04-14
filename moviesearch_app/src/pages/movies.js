@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Movies = () => {
 
     // const ApiKey = process.env.REACT_APP_API_KEY
+
+    const [content, setContent] = useState([])
 
     return (
         <div>
