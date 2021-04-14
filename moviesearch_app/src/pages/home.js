@@ -1,13 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-
-
-const Home = () => {
-    return (
-        <h1>This is home page</h1>
-    )
-
-=======
 import { Carousel, CarouselItem } from 'react-bootstrap';
 
 
@@ -98,7 +89,6 @@ const Home = () => {
     //   </Row>
     // </Container>
   );
->>>>>>> main
 };
 
 export default Home;
