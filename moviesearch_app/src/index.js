@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import reducers from "./reducer";
 
-import Navbar from "./components/navbar";
+import Navbar from "./components/navbar.js";
 import Home from "./pages/home";
 import Search from "./pages/search";
 import Movies from "./pages/movies";
@@ -39,22 +39,6 @@ const App = () => {
   );
 };
 
-ReactDOM.render(
-  <Provider store={createStore(reducers, applyMiddleware(thunk))}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
-);
-
-    return (
-        <div>
-
-   
-            <Menu/>
-
-        </div>
-    );
-};
 
 ReactDOM.render(
 <Provider store={createStore(reducers, applyMiddleware(thunk))}>
