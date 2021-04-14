@@ -17,29 +17,6 @@ import Series from "./pages/series";
 
 const App = () => {
 
-
-  return (
-    <Router>
-      <Navbar />
-
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/search">
-          <Search />
-        </Route>
-        <Route path="/movies">
-          <Movies />
-        </Route>
-        <Route path="/series">
-          <Series />
-        </Route>
-      </Switch>
-    </Router>
-  );
-};
-
     return (
         <Router>
             <Navbar />
@@ -60,6 +37,7 @@ const App = () => {
             </Switch>
         </Router>
     );
+};
 
 ReactDOM.render(
     <Provider store={createStore(reducers, applyMiddleware(thunk))}>
