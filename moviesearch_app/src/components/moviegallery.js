@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Card, Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
 const MovieGallery = (props) => {
