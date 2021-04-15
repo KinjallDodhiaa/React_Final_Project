@@ -29,4 +29,5 @@ const searchReducer = (results = searchResult, action) => {
 
 export default combineReducers({
   results: searchReducer
+  
 });
