@@ -30,3 +30,26 @@ h1 {
   font-size: 2.4rem;
   text-align: center;
 }
+
+.series {
+  font-family: Source Sans Pro, sans-serif;
+  font-size: 1.7rem;
+  padding : 24px 24px 20px 10px;
+}
+
+.seriesBtnGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.seriesNavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbarTitle {
+  font-family: Source Sans Pro, sans-serif;
+  font-size: 2rem;
+}

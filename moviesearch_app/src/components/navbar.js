@@ -6,6 +6,8 @@ import { Sidebardata } from "./sidebardata";
 import "../css/navbar.css";
 import { IconContext } from "react-icons";
 
+
+
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
 
@@ -18,8 +20,10 @@ const Navbar = () => {
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-          <h1>萨拉·弗洛林·金贾尔·凯文</h1>
-          <span className="logo-span"><img className="logo" src="../images/logo.png" alt="logo" /></span>
+          <h1 className="navbarTitle">S.F.K MOVIES ENTERTAINMENT</h1>
+          <span className="logo-span">
+            <img className="logo" src="../images/logo.png" alt="logo" />
+          </span>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
