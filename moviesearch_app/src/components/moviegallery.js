@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Container, Row } from 'react-bootstrap';
+import { Card, Container, Row ,Col} from 'react-bootstrap';
 import { connect } from 'react-redux';
 
 const MovieGallery = (props) => {
@@ -13,6 +13,7 @@ const MovieGallery = (props) => {
               <Container>
                 <Row>
                   {props.data.data.map((elm, idx) => (
+                    
                     <Col key={idx} className="p-3" lg="4" md="3" sm="1">
                       <Card style={{ width: "18rem" }}>
                         <Card.Img variant="top" src={elm.Poster} height="250" />
