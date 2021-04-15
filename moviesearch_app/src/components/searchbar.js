@@ -1,29 +1,70 @@
 import React, { useRef } from 'react';
-import { Button, Container, FormControl, InputGroup, Row } from 'react-bootstrap';
+import { Button, Container, Dropdown, FormControl, InputGroup, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { getMovieData } from '../action';
 
-const SearchBar = (props) => {
-    console.log(props);
-    const searchRef = useRef();
+const SearchBar = ({ getMovieData }) => {
+  // const { getMovieData } = props
+  const searchRef = useRef();
 
+  const searchMovieOnClick = () => {
+     getMovieData(searchRef.current.value);
+  };
 
-    const searchMovieOnClick = () => {
-        props.getMovieData(searchRef.current.value)
-    }
-    return (
-        <Container>
-            <Row>
-                <InputGroup className="mb-3">
-                    <InputGroup.Prepend>
-                        <Button onClick={searchMovieOnClick} variant="outline-secondary">Button</Button>
-                    </InputGroup.Prepend>
-                    <FormControl ref={searchRef} aria-describedby="basic-addon1" />
-                </InputGroup>
+  // const searchMovieCategoryOnClick = (e) =>{
+  //     props.getMovieData(e.target.value);
+  //     console.log(e.target.value);
+  // }
 
-            </Row>
-        </Container>
-    );
+  const searchMovieCategoryOnClick = (e) => {
+     getMovieData(e.target.name);
+  };
+
+  return (
+    <Container className="mt-4">
+      <Row>
+        <InputGroup className="mb-3">
+          <InputGroup.Prepend>
+            <Button onClick={searchMovieOnClick} variant="outline-secondary">
+              Search
+            </Button>
+          </InputGroup.Prepend>
+          <FormControl ref={searchRef} aria-describedby="basic-addon1" />
+        </InputGroup>
+
+        <Button name="action" onClick={searchMovieCategoryOnClick}>
+          Action
+        </Button>
+        <Button name="thriller" onClick={searchMovieCategoryOnClick}>
+          Thriller
+        </Button>
+        <Button name="horror" onClick={searchMovieCategoryOnClick}>
+          Horror
+        </Button>
+
+        {/* <select
+            onClick={searchMovieCategoryOnClick}
+          >
+            <option value="action">Action</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Romance">Romance</option>
+          </select> */}
+
+        {/* <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Dropdown Button
+            </Dropdown.Toggle>
+            <Dropdown.Menu ref={searchRef}>
+              <Dropdown.Item onClick={searchMovieCategoryOnClick}>
+                Action
+              </Dropdown.Item>
+              <Dropdown.Item>Thrillers</Dropdown.Item>
+              <Dropdown.Item>Romance</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown> */}
+      </Row>
+    </Container>
+  );
 };
 
 export default connect(null, { getMovieData })(SearchBar);
