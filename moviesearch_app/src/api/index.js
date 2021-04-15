@@ -1,6 +1,7 @@
 export const getResults = (searchValue) => {
   return new Promise((resolve, reject) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`;
+    const apiKey = process.env.REACT_APP_API_KEY;
+    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=${apiKey}`;
     fetch(url)
       .then((response) => {
         if (response.status === 200) {
@@ -21,3 +22,5 @@ export const getResults = (searchValue) => {
       });
   });
 };
+
+// http://www.omdbapi.com/?s=${searchValue}&type=movie&apikey=263d22d8
