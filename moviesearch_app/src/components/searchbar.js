@@ -1,14 +1,20 @@
-import React, { useRef } from 'react';
-import { Button, Container, Dropdown, FormControl, InputGroup, Row } from 'react-bootstrap';
-import { connect } from 'react-redux';
-import { getMovieData } from '../action';
+import React, { useRef } from "react";
+import {
+  Button,
+  Container,
+  FormControl,
+  InputGroup,
+  Row,
+} from "react-bootstrap";
+import { connect } from "react-redux";
+import { getSearchData } from "../action";
 
-const SearchBar = ({ getMovieData }) => {
+const SearchBar = ({ getSearchData }) => {
   // const { getMovieData } = props
   const searchRef = useRef();
 
   const searchMovieOnClick = () => {
-     getMovieData(searchRef.current.value);
+    getSearchData(searchRef.current.value);
   };
 
   // const searchMovieCategoryOnClick = (e) =>{
@@ -16,9 +22,7 @@ const SearchBar = ({ getMovieData }) => {
   //     console.log(e.target.value);
   // }
 
-  const searchMovieCategoryOnClick = (e) => {
-     getMovieData(e.target.name);
-  };
+  // some smal changes
 
   return (
     <Container className="mt-4">
@@ -31,16 +35,6 @@ const SearchBar = ({ getMovieData }) => {
           </InputGroup.Prepend>
           <FormControl ref={searchRef} aria-describedby="basic-addon1" />
         </InputGroup>
-
-        <Button name="action" onClick={searchMovieCategoryOnClick}>
-          Action
-        </Button>
-        <Button name="thriller" onClick={searchMovieCategoryOnClick}>
-          Thriller
-        </Button>
-        <Button name="horror" onClick={searchMovieCategoryOnClick}>
-          Horror
-        </Button>
 
         {/* <select
             onClick={searchMovieCategoryOnClick}
@@ -67,4 +61,4 @@ const SearchBar = ({ getMovieData }) => {
   );
 };
 
-export default connect(null, { getMovieData })(SearchBar);
+export default connect(null, { getSearchData })(SearchBar);

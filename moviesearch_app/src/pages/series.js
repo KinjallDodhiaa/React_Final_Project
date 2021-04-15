@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
+import SeriesCategories from "../components/seriescategories";
+import SeriesGallery from "../components/seriesgallery";
 
 const Series = () => {
-    return (
-        <div>
-            <h1>This is series page</h1>
-        </div>
-    );
+  return (
+    <>
+      <SeriesCategories />
+      <SeriesGallery />
+    </>
+  );
 };
 
 export default Series;

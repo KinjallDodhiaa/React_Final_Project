@@ -1,14 +1,13 @@
-import React from 'react';
-import SearchBar from '../components/searchbar';
-import MovieGallery from '../components/moviegallery';
-
+import React from "react";
+import SearchBar from "../components/searchbar";
+import SearchGallery from "../components/searchgallery";
 const Search = () => {
-    return (
-        <>
-            <SearchBar />
-            <MovieGallery />
-        </>
-    );
-}
+  return (
+    <div>
+      <SearchBar />
+      <SearchGallery />
+    </div>
+  );
+};
 
 export default Search;

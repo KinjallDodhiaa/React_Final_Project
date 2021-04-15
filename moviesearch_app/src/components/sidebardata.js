@@ -16,7 +16,6 @@ export const Sidebardata = [
     icon: <FaIcons.FaSearch />,
     cName: "nav-text",
   },
-
   {
     title: "Movies",
     path: "/movies",
@@ -28,5 +27,5 @@ export const Sidebardata = [
     path: "/series",
     icon: <MdIcons.MdLocalMovies />,
     cName: "nav-text",
-  }
+  },
 ];

@@ -12,9 +12,9 @@ import reducers from "./reducer";
 
 import Navbar from "./components/navbar.js";
 import Home from "./pages/home";
-import Search from "./pages/search";
 import Movies from "./pages/movies";
 import Series from "./pages/series"; 
+import Search from "./pages/search";
 
 
 
@@ -31,8 +31,8 @@ const App = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/search">
-          <Search />
+        <Route path='/search'>
+          <Search/>
         </Route>
         <Route path="/movies">
           <Movies />
