@@ -11,13 +11,6 @@ export const Sidebardata = [
     cName: "nav-text",
   },
   {
-    title: "Search",
-    path: "/search",
-    icon: <FaIcons.FaSearch />,
-    cName: "nav-text",
-  },
-
-  {
     title: "Movies",
     path: "/movies",
     icon: <FaIcons.FaFilm />,

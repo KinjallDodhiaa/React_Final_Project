@@ -1,10 +1,13 @@
 import React from 'react';
+import SearchBar from '../components/searchbar';
+import SeriesGallery from '../components/seriesgallery';
 
 const Series = () => {
     return (
-        <div>
-            <h1>This is series page</h1>
-        </div>
+        <>
+          <SearchBar/>
+          <SeriesGallery/>
+        </>
     );
 };
 
