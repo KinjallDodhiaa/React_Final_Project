@@ -1,13 +1,13 @@
 import React from 'react';
-import SearchBar from '../components/searchbar';
 import MovieGallery from '../components/moviegallery';
+import MovieCategories from '../components/moviecategories'
 
 const Movies = () => {
     return (
-        <>
-            <SearchBar />
-            <MovieGallery />
-        </>
+      <>
+        <MovieCategories />
+        <MovieGallery />
+      </>
     );
 }
 
