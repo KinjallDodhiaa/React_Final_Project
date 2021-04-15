@@ -16,6 +16,9 @@ const SearchBar = ({ getMovieData }) => {
   //     console.log(e.target.value);
   // }
 
+
+  // some smal changes
+
   const searchMovieCategoryOnClick = (e) => {
      getMovieData(e.target.name);
   };
