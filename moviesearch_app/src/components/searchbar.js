@@ -31,16 +31,24 @@ const SearchBar = ({ getMovieData }) => {
           </InputGroup.Prepend>
           <FormControl ref={searchRef} aria-describedby="basic-addon1" />
         </InputGroup>
+        <Container>
+          <Row>
+            <h1>Movies</h1>
+            <Button name="action" onClick={searchMovieCategoryOnClick}>
+              Action
+            </Button>
+            <Button name="thriller" onClick={searchMovieCategoryOnClick}>
+              Thriller
+            </Button>
+            <Button name="horror" onClick={searchMovieCategoryOnClick}>
+              Horror
+            </Button>
+            <Button name="drama" onClick={searchMovieCategoryOnClick}>
+              Drama
+            </Button>
 
-        <Button name="action" onClick={searchMovieCategoryOnClick}>
-          Action
-        </Button>
-        <Button name="thriller" onClick={searchMovieCategoryOnClick}>
-          Thriller
-        </Button>
-        <Button name="horror" onClick={searchMovieCategoryOnClick}>
-          Horror
-        </Button>
+          </Row>
+        </Container>
 
         {/* <select
             onClick={searchMovieCategoryOnClick}

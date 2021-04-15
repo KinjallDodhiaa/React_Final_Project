@@ -1,43 +1,14 @@
-<<<<<<< HEAD
-import React, { useState } from 'react';
-=======
-import React, { useEffect, useState } from 'react';
-import {connect} from 'react-redux';
-import { getResults } from '../api';
->>>>>>> main
+import React from 'react';
+import SearchBar from '../components/searchbar';
+import MovieGallery from '../components/moviegallery';
 
-const Movies = (props) => {
-
-    // const [movies,setMovies] = useState([]);
-    // const searchValue = 'action';
-    // useEffect(() => {
-    //     fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`)
-    //         .then(response => response.json())
-    //         .then(data=>setMovies(data))     
-    // }, []) 
-    // console.log(movies);
-
-<<<<<<< HEAD
-    const [content, setContent] = useState([])
-
+const Movies = () => {
     return (
-        <div>
-            <h1>This is movie page</h1>
-        </div>
+        <>
+            <SearchBar />
+            <MovieGallery />
+        </>
     );
-=======
-    
-
-
-    return null;
->>>>>>> main
-};
-
-const mapStateToProps =(state)=>{
-return{
-    data: state.results
-}
 }
 
-
-export default connect(mapStateToProps)(Movies);
+export default Movies

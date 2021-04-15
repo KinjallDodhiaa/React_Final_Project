@@ -12,7 +12,6 @@ import reducers from "./reducer";
 
 import Navbar from "./components/navbar.js";
 import Home from "./pages/home";
-import Search from "./pages/search";
 import Movies from "./pages/movies";
 import Series from "./pages/series"; 
 
@@ -30,9 +29,6 @@ const App = () => {
       <Switch>
         <Route exact path="/">
           <Home />
-        </Route>
-        <Route path="/search">
-          <Search />
         </Route>
         <Route path="/movies">
           <Movies />

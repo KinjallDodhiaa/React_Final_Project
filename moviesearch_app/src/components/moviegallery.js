@@ -12,7 +12,9 @@ const MovieGallery = (props) => {
             return (
               <Container>
                 <Row>
+                  
                   {props.data.data.map((elm, idx) => (
+                    elm.Type==='movie'? 
                     <Col key={idx} className="p-3" lg="4" md="3" sm="1">
                       <Card style={{ width: "18rem" }}>
                         <Card.Img variant="top" src={elm.Poster} height="250" />
@@ -28,7 +30,7 @@ const MovieGallery = (props) => {
                           </Card.Text>
                         </Card.Body>
                       </Card>
-                    </Col>
+                    </Col> :null
                   ))}
                 </Row>
               </Container>
