@@ -40,7 +40,7 @@ const SeriesGallery = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.results,
+    data: state.seriesResults,
   };
 };
 

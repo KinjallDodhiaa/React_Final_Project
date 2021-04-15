@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 
-const MovieGallery = (props) => {
+const SearchGallery = (props) => {
   switch (props.data.status) {
     case "START":
       return <h1>LOADING...</h1>;
@@ -38,8 +38,8 @@ const MovieGallery = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.movieResults
+    data: state.results,
   };
 };
 
-export default connect(mapStateToProps)(MovieGallery);
+export default connect(mapStateToProps)(SearchGallery);
