@@ -1,14 +1,14 @@
-import React from 'react';
-import SearchBar from '../components/searchbar';
-import SeriesGallery from '../components/seriesgallery';
+import React from "react";
+import SeriesCategories from "../components/seriescategories";
+import SeriesGallery from "../components/seriesgallery";
 
 const Series = () => {
-    return (
-        <>
-          <SearchBar/>
-          <SeriesGallery/>
-        </>
-    );
+  return (
+    <>
+      <SeriesCategories />
+      <SeriesGallery />
+    </>
+  );
 };
 
 export default Series;
