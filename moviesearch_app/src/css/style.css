@@ -73,7 +73,7 @@ ul.social a:hover {
 
 .cardBorder {
   border: 4px oldlace outset;
-  /* box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2); */
+  /* box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2); */
   box-shadow: 2px 2px red, -1em 0 0.4em olive;
 }
 
