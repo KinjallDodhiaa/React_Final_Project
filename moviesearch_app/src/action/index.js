@@ -66,3 +66,17 @@ export const getSeriesData = (series) => {
       });
   };
 };
+
+export const addToFav = (elm,idx) =>{
+  return{
+    type:'ADD_TO_FAV',
+    payload:{elm,idx}
+  }
+}
+
+export const selectIndexAction = (idx) => {
+  return {
+    type: "SELECT_INDEX",
+    payload: idx
+  };
+}

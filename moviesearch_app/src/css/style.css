@@ -85,8 +85,12 @@ ul.social a:hover {
 .searchInput {
   background-color: rgba(238, 237, 237, 0.993);
   color: #030617;
+
+  border-radius: 30px;}
+
   border-radius: 30px;
 }
+
 
 .series {
   font-family: Source Sans Pro, sans-serif;
@@ -110,3 +114,9 @@ ul.social a:hover {
   font-family: Source Sans Pro, sans-serif;
   font-size: 2rem;
 }
+
+.modalImg{
+  margin: 0 auto;
+  width: 25vw;
+}
+

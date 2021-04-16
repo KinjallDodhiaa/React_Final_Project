@@ -69,6 +69,7 @@ const seriesSearchReducer = (results = seriesSearchResult, action) => {
   }
 };
 
+
 export default combineReducers({
   results: searchReducer,
   movieResults: movieSearchReducer,
