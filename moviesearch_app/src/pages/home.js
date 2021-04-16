@@ -10,29 +10,47 @@ const Home = () => {
         <Carousel style={{
           width: '100vw',
           height: '80vh'
+
         }}>
           <CarouselItem className="item " interval={3000}  >
             <div>
-              <img className="img-slider" src="https://www.mediaweek.com.au/wp-content/uploads/2019/12/jumanji-the-next-level-.gif" alt="" />
+              <img className="img-slider" src="https://i.ytimg.com/vi/wZti8QKBWPo/maxresdefault.jpg" alt="" />
             </div>
           </CarouselItem>
 
-          <CarouselItem className="item" interval={3000} fade='true'>
+          <CarouselItem className="item" interval={3000} fade>
 
             <div>
-              <img className="img-slider" src="https://miro.medium.com/max/3000/0*9eO1lirHDIFk2blU.jpg" alt="" />
+              <img className="img-slider" src="https://wallpaperaccess.com/full/645142.jpg" alt="" />
             </div>
           </CarouselItem>
 
-          <CarouselItem className="item" interval={3000} fade='true'>
+          <CarouselItem className="item" interval={3000} fade>
 
             <div >
-              <img className="img-slider" src="https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2019/09/01093013/Endgame-Lead-1.jpg" alt="" />
+              <img className="img-slider" src="https://collider.com/wp-content/uploads/tron-yellow-billboard-movie-poster.jpg" alt="" />
             </div>
           </CarouselItem>
         </Carousel>
 
+        <footer>
+          <div class="container">
+            <div class="row text-light text-center py-4 justify-content-center">
 
+              <div class="col-sm-10 col-md-8 col-lg-6">
+                <p>Magnificent React App Made by S.F.K With Love</p>
+                <p>&copy;All rights reserved</p>
+                <ul class="social pt-3">
+                  <li><a href="" target="_blank"><i class="fab fa-facebook fa-3x"></i></a></li>
+                  <li><a href="" target="_blank"><i class="fab fa-instagram fa-3x"></i></a></li>
+                  <li><a href="" target="_blank"><i class="fab fa-twitter fa-3x"></i></a></li>
+                  <li><a href="" target="_blank"><i class="fab fa-github fa-3x"></i></a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </footer>
 
       </div>
     </div>
