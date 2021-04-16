@@ -63,4 +63,27 @@ h1 {
   background-color: rgba(238, 237, 237, 0.993);
   color: #030617;
   border-radius: 30px;
+
+.series {
+  font-family: Source Sans Pro, sans-serif;
+  font-size: 1.7rem;
+  padding : 24px 24px 20px 10px;
+}
+
+.seriesBtnGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.seriesNavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbarTitle {
+  font-family: Source Sans Pro, sans-serif;
+  font-size: 2rem;
+
 }
