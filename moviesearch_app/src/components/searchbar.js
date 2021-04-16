@@ -15,6 +15,7 @@ const SearchBar = ({ getSearchData }) => {
 
   const searchMovieOnClick = () => {
     getSearchData(searchRef.current.value);
+    searchRef.current.value='';
   };
 
   // const searchMovieCategoryOnClick = (e) =>{
@@ -22,18 +23,27 @@ const SearchBar = ({ getSearchData }) => {
   //     console.log(e.target.value);
   // }
 
-  // some smal changes
-
   return (
     <Container className="mt-4">
       <Row>
         <InputGroup className="mb-3">
           <InputGroup.Prepend>
-            <Button onClick={searchMovieOnClick} variant="outline-secondary">
+            <Button
+              style={{ width: "10vw" }}
+              className="pr-3 pl-3 searchInput button"
+              onClick={searchMovieOnClick}
+              variant="outline-secondary"
+            >
               Search
             </Button>
           </InputGroup.Prepend>
-          <FormControl ref={searchRef} aria-describedby="basic-addon1" />
+          <FormControl
+            style={{ height: "4rem" }}
+            className="searchInput"
+            ref={searchRef}
+            aria-describedby="basic-addon1"
+            placeholder="search movies or series by title"
+          />
         </InputGroup>
 
         {/* <select

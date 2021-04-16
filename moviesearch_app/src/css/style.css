@@ -31,6 +31,39 @@ h1 {
   text-align: center;
 }
 
+.searchbar {
+  border-radius: 30px;
+}
+
+.objectfit{
+  object-fit: cover;
+}
+
+.cardBodyColor{
+  background-color: #030617;
+  color: white;
+}
+
+.cardTitleHeight {
+  height: 1rem;
+}
+
+.cardBorder{
+  border: 4px oldlace outset;
+  /* box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2); */
+  box-shadow: 2px 2px red, -1em 0 .4em olive;
+}
+
+.button{
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.searchInput{
+  background-color: rgba(238, 237, 237, 0.993);
+  color: #030617;
+  border-radius: 30px;
+
 .series {
   font-family: Source Sans Pro, sans-serif;
   font-size: 1.7rem;
@@ -52,4 +85,5 @@ h1 {
 .navbarTitle {
   font-family: Source Sans Pro, sans-serif;
   font-size: 2rem;
+
 }
