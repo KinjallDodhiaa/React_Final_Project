@@ -30,3 +30,26 @@ h1 {
   font-size: 2.4rem;
   text-align: center;
 }
+
+/* Footer */
+
+footer {
+  background-color: #030617;
+  padding: 10rem 2rem 3rem;
+}
+footer p,
+footer a {
+  color: white;
+  text-decoration: none;
+}
+ul.social {
+  list-style-type: none;
+  display: flex;
+  margin: 0 auto;
+}
+ul.social li {
+  margin: 0 auto;
+}
+ul.social a:hover {
+  color: #62adeb;
+}
