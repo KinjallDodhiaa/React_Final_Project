@@ -1,10 +1,10 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Dropdown, DropdownButton, Row } from "react-bootstrap";
 import { getSeriesData } from "../action";
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-const SeriesCategories = ({getSeriesData}) => {
-  
+const SeriesCategories = ({ getSeriesData }) => {
+
   const searchMovieCategoryOnClick = (e) => {
     getSeriesData(e.target.name);
   };
@@ -14,86 +14,41 @@ const SeriesCategories = ({getSeriesData}) => {
         <Row>
           <div className="seriesBtnGroup">
             <h1 className="series">Series</h1>
-            <button
-              type="button"
-              class="btn btn-dark"
-              name="comedy"
-              onClick={searchMovieCategoryOnClick}
-            >
-              Comedy
-            </button>
-            <button
-              type="button"
-              class="btn btn-dark"
-              name="thriller"
-              onClick={searchMovieCategoryOnClick}
-            >
-              Thriller
-            </button>
-            <button
-              type="button"
-              class="btn btn-dark"
-              name="horror"
-              onClick={searchMovieCategoryOnClick}
-            >
-              Horror
-            </button>
-            <button
-              type="button"
-              class="btn btn-dark"
-              name="drama"
-              onClick={searchMovieCategoryOnClick}
-            >
-              Drama
-            </button>
-            <button
-              type="button"
-              class="btn btn-dark"
-              name="animation"
-              onClick={searchMovieCategoryOnClick}
-            >
-              Animation
-            </button>
-            <button
-              type="button"
-              class="btn btn-dark"
-              name="documentary"
-              onClick={searchMovieCategoryOnClick}
-            >
-              Documentary
-            </button>
-            <button
-              type="button"
-              class="btn btn-dark"
-              name="anime"
-              onClick={searchMovieCategoryOnClick}
-            >
-              Anime
-            </button>
-            <button
-              type="button"
-              class="btn btn-dark"
-              name="science fiction"
-              onClick={searchMovieCategoryOnClick}
-            >
-              SF
-            </button>
-            <button
-              type="button"
-              class="btn btn-dark"
-              name="cartoon"
-              onClick={searchMovieCategoryOnClick}
-            >
-              Cartoon
-            </button>
-            <button
-              type="button"
-              class="btn btn-dark"
-              name="Crime"
-              onClick={searchMovieCategoryOnClick}
-            >
-              Crime
-            </button>
+            <DropdownButton id="dropdown-basic-button" title="Categories">
+              <Dropdown.Item
+                name="thriller"
+                onClick={searchMovieCategoryOnClick}>Thriller</Dropdown.Item>
+              <Dropdown.Item
+                name="horror"
+                onClick={searchMovieCategoryOnClick}>Horror</Dropdown.Item>
+              <Dropdown.Item
+                name="drama"
+                onClick={searchMovieCategoryOnClick}>Drama</Dropdown.Item>
+              <Dropdown.Item
+                name="comedy"
+                onClick={searchMovieCategoryOnClick}>Comedy</Dropdown.Item>
+              <Dropdown.Item
+                name="documentary"
+                onClick={searchMovieCategoryOnClick}>Documentary</Dropdown.Item>
+              <Dropdown.Item
+                name="animation"
+                onClick={searchMovieCategoryOnClick}>Animation</Dropdown.Item>
+              <Dropdown.Item
+                name="anime"
+                onClick={searchMovieCategoryOnClick}>Anime</Dropdown.Item>
+              <Dropdown.Item
+                name="science fiction"
+                onClick={searchMovieCategoryOnClick}>Sci-Fi</Dropdown.Item>
+              <Dropdown.Item
+                name="cartoon"
+                onClick={searchMovieCategoryOnClick}>Cartoon</Dropdown.Item>
+              <Dropdown.Item
+                name="crime"
+                onClick={searchMovieCategoryOnClick}>Crime</Dropdown.Item>
+              <Dropdown.Item
+                name="love"
+                onClick={searchMovieCategoryOnClick}>Love</Dropdown.Item>
+            </DropdownButton>
           </div>
         </Row>
       </Container>
