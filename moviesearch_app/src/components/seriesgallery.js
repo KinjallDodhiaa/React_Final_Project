@@ -1,8 +1,13 @@
-  import React from "react";
+import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { connect } from "react-redux";
+import { addToFavorite } from "../action";
+import * as BsIcons from "react-icons/bs";
 
 const SeriesGallery = (props) => {
+     const addBtnFav = (elm) => {
+       props.addToFavorite(elm);
+     };
   switch (props.data.status) {
     case "START":
       return <h1>LOADING...</h1>;
@@ -26,6 +31,17 @@ const SeriesGallery = (props) => {
                       </Card.Title>
                       <Card.Text className="text-center">{elm.Type}</Card.Text>
                     </Card.Body> */}
+                    {!props.favList.some((e) => e.imdbID === elm.imdbID) ? (
+                      <BsIcons.BsFillStarFill
+                        className="fav-icon"
+                        onClick={() => {
+                          addBtnFav(elm);
+                        }}
+                      />
+                    ) : (
+                      <BsIcons.BsBookmarkCheck className="bookmark-icon" />
+                    )}
+                    />
                   </Card>
                 </Col>
               ) : null
@@ -41,7 +57,8 @@ const SeriesGallery = (props) => {
 const mapStateToProps = (state) => {
   return {
     data: state.seriesResults,
+    favList: state.favoriteResults,
   };
 };
 
-export default connect(mapStateToProps)(SeriesGallery);
+export default connect(mapStateToProps,{addToFavorite})(SeriesGallery);

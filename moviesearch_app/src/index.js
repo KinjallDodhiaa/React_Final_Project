@@ -15,6 +15,7 @@ import Home from "./pages/home";
 import Movies from "./pages/movies";
 import Series from "./pages/series"; 
 import Search from "./pages/search";
+import Favorite from "./pages/favorite";
 
 
 
@@ -39,6 +40,9 @@ const App = () => {
         </Route>
         <Route path="/series">
           <Series />
+        </Route>
+        <Route path="/favorite">
+          <Favorite/>
         </Route>
       </Switch>
     </Router>

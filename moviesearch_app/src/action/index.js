@@ -66,3 +66,16 @@ export const getSeriesData = (series) => {
       });
   };
 };
+
+export const addToFavorite = (elm) => {
+  return {
+    type: "ADD_TO_FAVORITE",
+    payload: elm,
+  };
+};
+export const removeFavorite = (idx) => {
+  return {
+    type: "REMOVE_FAVORITE",
+    payload: idx,
+  };
+};

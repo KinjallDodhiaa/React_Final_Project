@@ -34,17 +34,17 @@ const Home = () => {
         </Carousel>
 
         <footer>
-          <div class="container">
-            <div class="row text-light text-center py-4 justify-content-center">
+          <div className="container">
+            <div className="row text-light text-center py-4 justify-content-center">
 
-              <div class="col-sm-10 col-md-8 col-lg-6">
+              <div className="col-sm-10 col-md-8 col-lg-6">
                 <p>Magnificent React App Made by S.F.K With Love</p>
                 <p>&copy;All rights reserved</p>
-                <ul class="social pt-3">
-                  <li><a href="" target="_blank"><i class="fab fa-facebook fa-3x"></i></a></li>
-                  <li><a href="" target="_blank"><i class="fab fa-instagram fa-3x"></i></a></li>
-                  <li><a href="" target="_blank"><i class="fab fa-twitter fa-3x"></i></a></li>
-                  <li><a href="" target="_blank"><i class="fab fa-github fa-3x"></i></a></li>
+                <ul className="social pt-3">
+                  <li><a href="" target="_blank"><i className="fab fa-facebook fa-3x"></i></a></li>
+                  <li><a href="" target="_blank"><i className="fab fa-instagram fa-3x"></i></a></li>
+                  <li><a href="" target="_blank"><i className="fab fa-twitter fa-3x"></i></a></li>
+                  <li><a href="" target="_blank"><i className="fab fa-github fa-3x"></i></a></li>
                 </ul>
               </div>
 
