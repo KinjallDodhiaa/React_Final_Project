@@ -31,7 +31,7 @@ h1 {
   text-align: center;
 }
 
-/* Footer */
+/* Footer Start */
 
 footer {
   background-color: #030617;
@@ -53,6 +53,8 @@ ul.social li {
 ul.social a:hover {
   color: #62adeb;
 }
+
+/* Footer End */
 
 .searchbar {
   border-radius: 30px;
@@ -88,8 +90,11 @@ ul.social a:hover {
   border-radius: 30px;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> main
 .series {
   font-family: Source Sans Pro, sans-serif;
   font-size: 1.7rem;
@@ -99,7 +104,7 @@ ul.social a:hover {
 .seriesBtnGroup {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: left;
 }
 
 .seriesNavbar {
@@ -113,8 +118,13 @@ ul.social a:hover {
   font-size: 2rem;
 }
 
-.modalImg{
+/* Modal */
+.modalImg {
   margin: 0 auto;
-  width: 25vw;
+  width: 25rem;
+  height: 22rem;
 }
 
+/* .modal {
+  background-color: blue;
+} */
