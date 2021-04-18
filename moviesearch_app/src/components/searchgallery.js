@@ -1,16 +1,11 @@
-import React, { useState } from "react";
-import {
-  Card,
-  Container,
-  Row,
-  Col,
-  Modal,
-  Button,
-  Image,
-} from "react-bootstrap";
 
+import React, { useState } from "react";
+import { Card, Container, Row, Col, Modal, Button, Image } from "react-bootstrap";
 
 import { connect } from "react-redux";
+import { addToFavorite } from "../action";
+import * as BsIcons from "react-icons/bs";
+
 const SearchGallery = (props) => {
 
   const addBtnFav = (elm) => {
@@ -18,32 +13,16 @@ const SearchGallery = (props) => {
     console.log("this is add fav" + elm);
   };
 
-  const [preview, setPreview] = useState({
-    show: false,
-    moviePreview: "",
-    title: "",
-    type: "",
-    year: "",
-  });
 
-  const handleClose = () =>
-    setPreview({
-      show: false,
-      moviePreview: "",
-      title: "",
-      type: "",
-      year: "",
-    });
+  const [preview, setPreview] = useState({ show: false, moviePreview: '', title: '', type: '', year: '' });
+
+  const handleClose = () => setPreview({ show: false, moviePreview: '', title: '', type: '', year: '' });
 
   const previewShow = (poster, title, type, year) => {
-    setPreview({
-      show: true,
-      moviePreview: poster,
-      title: title,
-      type: type,
-      year: year,
-    });
-  };
+    setPreview({ show: true, moviePreview: poster, title: title, type: type, year: year })
+
+  }
+
 
   switch (props.data.status) {
     case "START":
@@ -54,18 +33,14 @@ const SearchGallery = (props) => {
       return (
         <Container>
           <Row className="mt-2">
-            {props.data.data.map((elm, idx) => (
+            
+            {props.data.data.map((elm, idx) => (  
               <Col key={idx} xs={12} sm={12} md={4} lg={3} className="mt-2">
                 <Card className="m-auto" style={{ width: "14.7rem" }}>
                   <Card.Img
                     onClick={() =>
                       previewShow(elm.Poster, elm.Title, elm.Type, elm.Year)
                     }
-
-                    onClick={() =>
-                      previewShow(elm.Poster, elm.Title, elm.Type, elm.Year)
-                    }
-
                     className="objectfit"
                     variant="top"
                     src={elm.Poster}
@@ -78,7 +53,6 @@ const SearchGallery = (props) => {
                     >
                       <p style={{ fontSize: "14px" }}>{elm.Title}</p>
                     </Card.Title>
-
                     {!props.favList.some((e) => e.imdbID === elm.imdbID) ? (
                       <BsIcons.BsFillStarFill
                         style={{ cursor: "pointer" }}
@@ -91,43 +65,20 @@ const SearchGallery = (props) => {
                       <BsIcons.BsBookmarkCheck size={25} />
                     )}
 
-
                     {/* <Card.Text className="text-center">{elm.Type}</Card.Text> */}
                   </Card.Body>
                 </Card>
               </Col>
             ))}
           </Row>
-
-
-          {/* <Modal size="sm" show={preview.show} onHide={handleClose}>
-            <Modal.Header
-              style={{ backgroundColor: "#030617" }}
-              className="cardBorder"
-              closeButton
-            >
-              <Image className="modalImg" fluid src={preview.moviePreview} />
-            </Modal.Header>
-            <Modal.Body className="cardBodyColor cardBorder">
-
-          <Modal size="sm" show={preview.show} onHide={handleClose}>
-            <Modal.Header>
-              <Image className="modalImg" fluid src={preview.moviePreview} />
-            </Modal.Header>
-            <Modal.Body>
-              <h3>{preview.title}</h3>
-              <p>{preview.year}</p>
-
           <Modal show={preview.show} onHide={handleClose}>
             <Modal.Header style={{ backgroundColor: "#030617" }}>
               <Image className="modalImg" fluid src={preview.moviePreview} />
             </Modal.Header>
             <Modal.Body className="cardBodyColor">
-
               <Modal.Title>{preview.title}</Modal.Title>
               <p>{`Type: ${preview.type}`}</p>
               <p>{`Year: ${preview.year}`}</p>
-
             </Modal.Body>
             <Modal.Footer className="cardBodyColor">
               <Button
@@ -138,40 +89,19 @@ const SearchGallery = (props) => {
                 Close
               </Button>
             </Modal.Footer>
-          </Modal> */}
-
-
-          <Modal
-            className="modal-size"
-            size="sm" show={preview.show}
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-          >
-            <Modal.Header
-              style={{ backgroundColor: "#030617" }}
-              className="cardBorder"
-              closeButton>
-              <Image className="modalImg" fluid src={preview.moviePreview} />
-              <Modal.Title id="contained-modal-title-vcenter">
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body className="cardBodyColor cardBorder">
-              <Modal.Title>{preview.title}</Modal.Title>
-              <p>{`Type: ${preview.type}`}</p>
-              <p>{`Year: ${preview.year}`}</p>
-
-            </Modal.Body>
           </Modal>
-
         </Container>
       );
     default:
       return null;
   }
 };
+
 const mapStateToProps = (state) => {
   return {
     data: state.results,
+    favList: state.favoriteResults,
   };
 };
-export default connect(mapStateToProps)(SearchGallery);
+
+export default connect(mapStateToProps, { addToFavorite })(SearchGallery);

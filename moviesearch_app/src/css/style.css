@@ -130,14 +130,6 @@ ul.social a:hover {
 .fav-icon:hover {
   cursor: pointer;
 }
-
-.fav-icon {
-  font-size: 2.8vw;
-
-.fav-icon{
-  font-size: 2vw;
-
-}
 .bookmark-icon {
   font-size: 2.8vw;
 }

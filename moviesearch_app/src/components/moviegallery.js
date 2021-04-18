@@ -46,10 +46,6 @@ const MovieGallery = (props) => {
         <Container>
           <Row>
             {props.data.data.map((elm, idx) => (
-
-
-
-
               <Col
                 key={idx}
                 className="mt-3 mb-3"
@@ -64,22 +60,11 @@ const MovieGallery = (props) => {
                     variant="top"
                     src={elm.Poster}
                     height="300"
-                  />
-                  <Card.Body className="cardBodyColor">
-
-
-              <Col key={idx} className="p-3" lg="4" md="3" sm="1">
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img
-                    variant="top"
-                    src={elm.Poster}
-                    height="250"
                     onClick={() =>
                       movieShow(elm.Poster, elm.Title, elm.Type, elm.Year)
                     }
                   />
-                  <Card.Body>
-
+                  <Card.Body className="cardBodyColor">
                     <Card.Title
                       style={{ height: "2.2rem" }}
                       className="text-center"
@@ -99,17 +84,8 @@ const MovieGallery = (props) => {
                     )}
                   </Card.Body>
                 </Card>
-
-
-
-
-              </Col>)
-            )}
-
-
               </Col>
             ))}
-
           </Row>
 
           <Modal show={movie.show} onHide={handleClose}>

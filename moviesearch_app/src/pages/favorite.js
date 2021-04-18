@@ -8,10 +8,13 @@ const Favorite = (props) => {
     props.removeFavorite(idx);
   };
   return (
-    <>
-      <h2 style={{ color: "white", textAlign: "center" }}>Favorite List</h2>
-      <Container>
+    
+      <Container className='mt-5'>
         <Row>
+          <h2 style={{ color: "white", textAlign: "center" }}>
+            Favorite List
+          </h2>
+
           {props.favList.map((elm, idx) => (
             <Col key={idx} className="mt-3 mb-3" lg="3" md="4" sm="12" xs="12">
               <Card className="m-auto" style={{ width: "14rem" }}>
@@ -41,8 +44,6 @@ const Favorite = (props) => {
           ))}
         </Row>
       </Container>
-      ;
-    </>
   );
 };
 

@@ -6,11 +6,6 @@ import * as BsIcons from "react-icons/bs";
 
 const SeriesGallery = (props) => {
 
-  const addBtnFav = (elm) => {
-    props.addToFavorite(elm);
-  };
-
-
       const [series, setSeries] = useState({
         show: false,
         seriesPreview: "",
@@ -51,95 +46,49 @@ const SeriesGallery = (props) => {
       return (
         <Container>
           <Row>
-
-            {props.data.data.map((elm, idx) => (
-              <Col
-                key={idx}
-                className="mt-3 mb-3"
-                lg="3"
-                md="4"
-                sm="12"
-                xs="12"
-              >
-                <Card className="m-auto" style={{ width: "14rem" }}>
-                  <Card.Img 
-                  variant="top" 
-                  src={elm.Poster} 
-                  height="300"
-                  className="objectfit"
-                   />
-                  <Card.Body className="cardBodyColor">
-                    <Card.Title
-                      style={{ height: "2.2rem" }}
-                      className="text-center"
-                    >
-                      <p style={{ fontSize: "14px" }}>{elm.Title}</p>
-                    </Card.Title>
-
             {props.data.data.map((elm, idx) =>
               elm.Type === "series" ? (
-                <Col key={idx} className="p-3" lg="3" md="3" sm="1">
-                  <Card className="cardBorder" style={{ width: "15rem" }}>
+                <Col
+                  key={idx}
+                  className="mt-3 mb-3"
+                  lg="3"
+                  md="4"
+                  sm="12"
+                  xs="12"
+                >
+                  <Card className="m-auto" style={{ width: "14rem" }}>
                     <Card.Img
-                      className="objectfit"
                       variant="top"
                       src={elm.Poster}
                       height="300"
+                      className="objectfit"
                       onClick={() =>
                         seriesShow(elm.Poster, elm.Title, elm.Type, elm.Year)
                       }
                     />
                     <Card.Body className="cardBodyColor">
-                      <Card.Title className="text-center cardTitleHeight">
-                        <h6>{elm.Title}</h6>
+                      <Card.Title
+                        style={{ height: "2.2rem" }}
+                        className="text-center"
+                      >
+                        <p style={{ fontSize: "14px" }}>{elm.Title}</p>
                       </Card.Title>
-
-                      <Card.Text className="text-center">{elm.Type}</Card.Text>
-
+                      {!props.favList.some((e) => e.imdbID === elm.imdbID) ? (
+                        <BsIcons.BsFillStarFill
+                          style={{ cursor: "pointer" }}
+                          size={25}
+                          onClick={() => {
+                            addBtnFav(elm);
+                          }}
+                        />
+                      ) : (
+                        <BsIcons.BsBookmarkCheck size={25} />
+                      )}
                     </Card.Body>
-
-
-                    </Card.Body> 
-
-                    </Card.Body>
-
-
-
-                    {!props.favList.some((e) => e.imdbID === elm.imdbID) ? (
-                      <BsIcons.BsFillStarFill
-                        style={{ cursor: "pointer" }}
-                        size={25}
-                        onClick={() => {
-                          addBtnFav(elm);
-                        }}
-                      />
-                    ) : (
-                      <BsIcons.BsBookmarkCheck size={25} />
-                    )}
-
-
-
-
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-
-
-                
-
-                      {/* <Card.Text className="text-center">{elm.Type}</Card.Text> */}
-                  
-
-
-
-                    {/* <Card.Text className="text-center">{elm.Type}</Card.Text> */}
-
                   </Card>
                 </Col>
               ) : null
             )}
-
           </Row>
           <Modal show={series.show} onHide={handleClose}>
             <Modal.Header
