@@ -40,7 +40,13 @@ const SearchGallery = (props) => {
               <Col key={idx} className="p-3" lg="3" md="3" sm="1">
                 <Card className="cardBorder" style={{ width: "15rem" }}>
                   <Card.Img
+
+                    onClick={() =>
+                      previewShow(elm.Poster, elm.Title, elm.Type, elm.Year)
+                    }
+
                     onClick={() => previewShow(elm.Poster, elm.Title, elm.Type, elm.Year)}
+
                     className="objectfit"
                     variant="top"
                     src={elm.Poster}
@@ -67,6 +73,20 @@ const SearchGallery = (props) => {
               </Col>
             ))}
           </Row>
+
+          <Modal show={preview.show} onHide={handleClose}>
+            <Modal.Header
+              style={{ backgroundColor: "#030617" }}
+              className="cardBorder"
+            >
+              <Image className="modalImg" fluid src={preview.moviePreview} />
+            </Modal.Header>
+            <Modal.Body className="cardBodyColor cardBorder">
+              <Modal.Title>{preview.title}</Modal.Title>
+              <p>{`Type: ${preview.type}`}</p>
+              <p>{`Year: ${preview.year}`}</p>
+              
+
           <Modal size="sm" show={preview.show} onHide={handleClose}>
             <Modal.Header>
               <Image className='modalImg' fluid src={preview.moviePreview} />
@@ -76,9 +96,14 @@ const SearchGallery = (props) => {
               <p>{preview.year}</p>
 
 
+
             </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
+            <Modal.Footer className="cardBodyColor cardBorder">
+              <Button
+                className="cardBodyColor modalFooter"
+                variant="secondary"
+                onClick={handleClose}
+              >
                 Close
               </Button>
             </Modal.Footer>

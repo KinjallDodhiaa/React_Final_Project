@@ -71,6 +71,8 @@ ul.social a:hover {
 .cardBodyColor {
   background-color: #030617;
   color: white;
+  text-align: center;
+
 }
 
 .cardTitleHeight {
@@ -137,8 +139,17 @@ ul.social a:hover {
 /* Modal */
 .modalImg {
   margin: 0 auto;
+
+  width: 25vw;
+  
+}
+
+.modalFooter{
+  margin: 0 auto;
+
   width: 25rem;
   height: 22rem;
+
 }
 
 /* .modal {
