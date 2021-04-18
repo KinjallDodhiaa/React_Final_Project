@@ -12,7 +12,7 @@ import reducers from "./reducer";
 import Navbar from "./components/navbar.js";
 import Home from "./pages/home";
 import Movies from "./pages/movies";
-import Series from "./pages/series"; 
+import Series from "./pages/series";
 import Search from "./pages/search";
 import Favorite from "./pages/favorite";
 
@@ -32,7 +32,7 @@ const App = () => {
           <Home />
         </Route>
         <Route path='/search'>
-          <Search/>
+          <Search />
         </Route>
         <Route path="/movies">
           <Movies />
@@ -41,7 +41,7 @@ const App = () => {
           <Series />
         </Route>
         <Route path="/favorite">
-          <Favorite/>
+          <Favorite />
         </Route>
       </Switch>
     </Router>
