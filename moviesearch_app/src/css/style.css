@@ -54,9 +54,6 @@ ul.social a:hover {
   color: #62adeb;
 }
 
- .searchbar {
-
-
 /* Footer End */
 
 .searchbar {
@@ -100,11 +97,6 @@ ul.social a:hover {
   border-radius: 30px;
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> main
 .series {
   font-family: Source Sans Pro, sans-serif;
   font-size: 1.7rem;
@@ -138,13 +130,9 @@ ul.social a:hover {
   font-size: 2.8vw;
 }
  
-
-}
-
 /* Modal */
 .modalImg {
   margin: 0 auto;
-
   width: 25vw;
   
 }
