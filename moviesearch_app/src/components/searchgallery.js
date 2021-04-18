@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import {
   Card,
@@ -8,8 +9,16 @@ import {
   Button,
   Image,
 } from "react-bootstrap";
+
+
 import { connect } from "react-redux";
 const SearchGallery = (props) => {
+
+  const addBtnFav = (elm) => {
+    props.addToFavorite(elm);
+    console.log("this is add fav" + elm);
+  };
+
   const [preview, setPreview] = useState({
     show: false,
     moviePreview: "",
@@ -17,6 +26,7 @@ const SearchGallery = (props) => {
     type: "",
     year: "",
   });
+
   const handleClose = () =>
     setPreview({
       show: false,
@@ -25,6 +35,7 @@ const SearchGallery = (props) => {
       type: "",
       year: "",
     });
+
   const previewShow = (poster, title, type, year) => {
     setPreview({
       show: true,
@@ -34,6 +45,7 @@ const SearchGallery = (props) => {
       year: year,
     });
   };
+
   switch (props.data.status) {
     case "START":
       return <h1>LOADING...</h1>;
@@ -42,29 +54,52 @@ const SearchGallery = (props) => {
     case "SUCCESS":
       return (
         <Container>
-          <Row>
+          <Row className="mt-2">
             {props.data.data.map((elm, idx) => (
-              <Col key={idx} className="p-3" lg="3" md="3" sm="1">
-                <Card className="cardBorder" style={{ width: "15rem" }}>
+              <Col key={idx} xs={12} sm={12} md={4} lg={3} className="mt-2">
+                <Card className="m-auto" style={{ width: "14.7rem" }}>
                   <Card.Img
                     onClick={() =>
                       previewShow(elm.Poster, elm.Title, elm.Type, elm.Year)
                     }
+
+                    onClick={() =>
+                      previewShow(elm.Poster, elm.Title, elm.Type, elm.Year)
+                    }
+
                     className="objectfit"
                     variant="top"
                     src={elm.Poster}
                     height="300"
                   />
                   <Card.Body className="cardBodyColor">
-                    <Card.Title className="text-center cardTitleHeight">
-                      <h6>{elm.Title}</h6>
+                    <Card.Title
+                      className="text-center"
+                      style={{ height: "2.7rem" }}
+                    >
+                      <p style={{ fontSize: "14px" }}>{elm.Title}</p>
                     </Card.Title>
+
+                    {!props.favList.some((e) => e.imdbID === elm.imdbID) ? (
+                      <BsIcons.BsFillStarFill
+                        style={{ cursor: "pointer" }}
+                        size={25}
+                        onClick={() => {
+                          addBtnFav(elm);
+                        }}
+                      />
+                    ) : (
+                      <BsIcons.BsBookmarkCheck size={25} />
+                    )}
+
+
                     {/* <Card.Text className="text-center">{elm.Type}</Card.Text> */}
                   </Card.Body>
                 </Card>
               </Col>
             ))}
           </Row>
+
           <Modal size="sm" show={preview.show} onHide={handleClose}>
             <Modal.Header>
               <Image className="modalImg" fluid src={preview.moviePreview} />
@@ -72,10 +107,20 @@ const SearchGallery = (props) => {
             <Modal.Body>
               <h3>{preview.title}</h3>
               <p>{preview.year}</p>
+
+          <Modal show={preview.show} onHide={handleClose}>
+            <Modal.Header style={{ backgroundColor: "#030617" }}>
+              <Image className="modalImg" fluid src={preview.moviePreview} />
+            </Modal.Header>
+            <Modal.Body className="cardBodyColor">
+              <Modal.Title>{preview.title}</Modal.Title>
+              <p>{`Type: ${preview.type}`}</p>
+              <p>{`Year: ${preview.year}`}</p>
+
             </Modal.Body>
-            <Modal.Footer className="cardBodyColor cardBorder">
+            <Modal.Footer className="cardBodyColor">
               <Button
-                className="cardBodyColor modalFooter"
+                className="cardBodyColor m-auto"
                 variant="secondary"
                 onClick={handleClose}
               >

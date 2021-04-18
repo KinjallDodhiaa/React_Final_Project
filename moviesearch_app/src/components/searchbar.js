@@ -24,13 +24,11 @@ const SearchBar = ({ getSearchData }) => {
   // }
 
   return (
-    <Container className="mt-4">
+    <Container>
       <Row>
-        <InputGroup className="mb-3">
+        <InputGroup>
           <InputGroup.Prepend>
             <Button
-              style={{ width: "10vw" }}
-              className="pr-3 pl-3 searchInput button"
               onClick={searchMovieOnClick}
               variant="outline-secondary"
             >
@@ -38,8 +36,6 @@ const SearchBar = ({ getSearchData }) => {
             </Button>
           </InputGroup.Prepend>
           <FormControl
-            style={{ height: "4rem" }}
-            className="searchInput"
             ref={searchRef}
             aria-describedby="basic-addon1"
             placeholder="search movies or series by title"
