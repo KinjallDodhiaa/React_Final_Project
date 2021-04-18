@@ -9,7 +9,6 @@ import './css/style.css';
 
 
 import reducers from "./reducer";
-
 import Navbar from "./components/navbar.js";
 import Home from "./pages/home";
 import Movies from "./pages/movies";
