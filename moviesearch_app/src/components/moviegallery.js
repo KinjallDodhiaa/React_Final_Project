@@ -48,6 +48,8 @@ const MovieGallery = (props) => {
             {props.data.data.map((elm, idx) => (
 
 
+
+
               <Col
                 key={idx}
                 className="mt-3 mb-3"
@@ -64,6 +66,7 @@ const MovieGallery = (props) => {
                     height="300"
                   />
                   <Card.Body className="cardBodyColor">
+
 
               <Col key={idx} className="p-3" lg="4" md="3" sm="1">
                 <Card style={{ width: "18rem" }}>
@@ -96,6 +99,9 @@ const MovieGallery = (props) => {
                     )}
                   </Card.Body>
                 </Card>
+
+
+
 
               </Col>)
             )}

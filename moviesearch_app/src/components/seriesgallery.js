@@ -6,6 +6,11 @@ import * as BsIcons from "react-icons/bs";
 
 const SeriesGallery = (props) => {
 
+  const addBtnFav = (elm) => {
+    props.addToFavorite(elm);
+  };
+
+
       const [series, setSeries] = useState({
         show: false,
         seriesPreview: "",
@@ -36,6 +41,7 @@ const SeriesGallery = (props) => {
      const addBtnFav = (elm) => {
        props.addToFavorite(elm);
      };
+
   switch (props.data.status) {
     case "START":
       return <h1>LOADING...</h1>;
@@ -90,9 +96,13 @@ const SeriesGallery = (props) => {
 
                       <Card.Text className="text-center">{elm.Type}</Card.Text>
 
+                    </Card.Body>
+
+
                     </Card.Body> 
 
                     </Card.Body>
+
 
 
                     {!props.favList.some((e) => e.imdbID === elm.imdbID) ? (
@@ -107,6 +117,9 @@ const SeriesGallery = (props) => {
                       <BsIcons.BsBookmarkCheck size={25} />
                     )}
 
+
+
+
                   </Card.Body>
                 </Card>
               </Col>
@@ -117,6 +130,7 @@ const SeriesGallery = (props) => {
 
                       {/* <Card.Text className="text-center">{elm.Type}</Card.Text> */}
                   
+
 
 
                     {/* <Card.Text className="text-center">{elm.Type}</Card.Text> */}
@@ -163,4 +177,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps,{addToFavorite})(SeriesGallery);
+export default connect(mapStateToProps, { addToFavorite })(SeriesGallery);

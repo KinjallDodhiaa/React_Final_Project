@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   Card,
@@ -100,6 +99,17 @@ const SearchGallery = (props) => {
             ))}
           </Row>
 
+
+          {/* <Modal size="sm" show={preview.show} onHide={handleClose}>
+            <Modal.Header
+              style={{ backgroundColor: "#030617" }}
+              className="cardBorder"
+              closeButton
+            >
+              <Image className="modalImg" fluid src={preview.moviePreview} />
+            </Modal.Header>
+            <Modal.Body className="cardBodyColor cardBorder">
+
           <Modal size="sm" show={preview.show} onHide={handleClose}>
             <Modal.Header>
               <Image className="modalImg" fluid src={preview.moviePreview} />
@@ -113,6 +123,7 @@ const SearchGallery = (props) => {
               <Image className="modalImg" fluid src={preview.moviePreview} />
             </Modal.Header>
             <Modal.Body className="cardBodyColor">
+
               <Modal.Title>{preview.title}</Modal.Title>
               <p>{`Type: ${preview.type}`}</p>
               <p>{`Year: ${preview.year}`}</p>
@@ -127,7 +138,31 @@ const SearchGallery = (props) => {
                 Close
               </Button>
             </Modal.Footer>
+          </Modal> */}
+
+
+          <Modal
+            className="modal-size"
+            size="sm" show={preview.show}
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header
+              style={{ backgroundColor: "#030617" }}
+              className="cardBorder"
+              closeButton>
+              <Image className="modalImg" fluid src={preview.moviePreview} />
+              <Modal.Title id="contained-modal-title-vcenter">
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body className="cardBodyColor cardBorder">
+              <Modal.Title>{preview.title}</Modal.Title>
+              <p>{`Type: ${preview.type}`}</p>
+              <p>{`Year: ${preview.year}`}</p>
+
+            </Modal.Body>
           </Modal>
+
         </Container>
       );
     default:

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, CarouselItem } from 'react-bootstrap';
+import { Carousel, CarouselItem, Container, Table } from 'react-bootstrap';
 
 
 const Home = () => {
@@ -7,11 +7,7 @@ const Home = () => {
 
     <div className="container mt-4 slider">
       <div className="row">
-        <Carousel style={{
-          width: '100vw',
-          height: '80vh'
-
-        }}>
+        <Carousel>
           <CarouselItem className="item " interval={3000}  >
             <div>
               <img className="img-slider" src="https://i.ytimg.com/vi/wZti8QKBWPo/maxresdefault.jpg" alt="" />
@@ -38,13 +34,13 @@ const Home = () => {
             <div className="row text-light text-center py-4 justify-content-center">
 
               <div className="col-sm-10 col-md-8 col-lg-6">
-                <p>Magnificent React App Made by S.F.K With Love</p>
-                <p>&copy;All rights reserved</p>
+                <p className="footer-text">Magnificent React App Made by S.F.K With Love</p>
+                <p className="footer-text">&copy;All rights reserved</p>
                 <ul className="social pt-3">
-                  <li><a href="" target="_blank"><i className="fab fa-facebook fa-3x"></i></a></li>
-                  <li><a href="" target="_blank"><i className="fab fa-instagram fa-3x"></i></a></li>
-                  <li><a href="" target="_blank"><i className="fab fa-twitter fa-3x"></i></a></li>
-                  <li><a href="" target="_blank"><i className="fab fa-github fa-3x"></i></a></li>
+                  <li><a href="https://de-de.facebook.com/" target="_blank"><i className="fab fa-facebook fa-3x"></i></a></li>
+                  <li><a href="https://www.instagram.com/" target="_blank"><i className="fab fa-instagram fa-3x"></i></a></li>
+                  <li><a href="https://twitter.com/" target="_blank"><i className="fab fa-twitter fa-3x"></i></a></li>
+                  <li><a href="https://github.com/FbW43-2/React_Final_Project" target="_blank"><i className="fab fa-github fa-3x"></i></a></li>
                 </ul>
               </div>
 

@@ -25,10 +25,14 @@ body {
 }
 
 h1 {
-  color: rgb(238, 248, 248);
   font-family: Courgette;
   font-size: 2.4rem;
   text-align: center;
+}
+
+h1,
+h3 {
+  color: rgb(238, 248, 248);
 }
 
 /* Footer Start */
@@ -55,6 +59,12 @@ ul.social a:hover {
 }
 
 
+.footer-text {
+  font-size: 1.2rem;
+}
+
+
+
 /* Footer End */
 
 .searchbar {
@@ -69,7 +79,6 @@ ul.social a:hover {
   background-color: #030617;
   color: white;
   text-align: center;
-
 }
 
 .cardTitleHeight {
@@ -116,29 +125,36 @@ ul.social a:hover {
 .navbarTitle {
   font-family: Source Sans Pro, sans-serif;
   font-size: 2rem;
-
 }
 
 .fav-icon:hover {
   cursor: pointer;
 }
+
+.fav-icon {
+  font-size: 2.8vw;
+
 .fav-icon{
   font-size: 2vw;
+
 }
-.bookmark-icon{
+.bookmark-icon {
   font-size: 2.8vw;
 }
- 
+
 
 /* Modal */
 .modalImg {
   margin: 0 auto;
   width: 25vw;
-  
 }
 
-.modalFooter{
+.modalFooter {
   margin: 0 auto;
+
+
+  width: 25rem;
+  height: 22rem;
 
 }
 
@@ -146,6 +162,9 @@ ul.social a:hover {
   background-color: blue;
 } */
 
+
+
 .cardTiTleFont{
   font-size: 16px;
 }
+
