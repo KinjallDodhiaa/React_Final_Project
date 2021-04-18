@@ -55,10 +55,10 @@ ul.social a:hover {
 }
 
 
+
 /* Footer End */
 
 .searchbar {
-
   border-radius: 30px;
 }
 
@@ -78,8 +78,6 @@ ul.social a:hover {
 }
 
 .cardBorder {
-  border: 4px oldlace outset;
-
   /* box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2); */
 
   /* box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2); */
@@ -122,6 +120,15 @@ ul.social a:hover {
 
 }
 
+.fav-icon:hover {
+  cursor: pointer;
+}
+.fav-icon{
+  font-size: 2vw;
+}
+.bookmark-icon{
+  font-size: 2.8vw;
+}
  
 
 
@@ -136,12 +143,12 @@ ul.social a:hover {
 .modalFooter{
   margin: 0 auto;
 
-  width: 25rem;
-  height: 22rem;
-
 }
 
 /* .modal {
   background-color: blue;
 } */
 
+.cardTiTleFont{
+  font-size: 16px;
+}
