@@ -33,7 +33,7 @@ const SeriesGallery = (props) => {
                       </Card.Title>
 
                       <Card.Text className="text-center">{elm.Type}</Card.Text>
-                    </Card.Body> */}
+                    </Card.Body> 
                     {!props.favList.some((e) => e.imdbID === elm.imdbID) ? (
                       <BsIcons.BsFillStarFill
                         className="fav-icon"
@@ -44,11 +44,10 @@ const SeriesGallery = (props) => {
                     ) : (
                       <BsIcons.BsBookmarkCheck className="bookmark-icon" />
                     )}
-                    />
+                
 
                       {/* <Card.Text className="text-center">{elm.Type}</Card.Text> */}
-                    </Card.Body>
-
+                  
                   </Card>
                 </Col>
               ) : null
