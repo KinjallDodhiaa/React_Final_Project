@@ -53,15 +53,16 @@ ul.social li {
 ul.social a:hover {
   color: #62adeb;
 }
+
 .searchbar {
   border-radius: 30px;
 }
 
-.objectfit{
+.objectfit {
   object-fit: cover;
 }
 
-.cardBodyColor{
+.cardBodyColor {
   background-color: #030617;
   color: white;
   text-align: center;
@@ -72,26 +73,31 @@ ul.social a:hover {
   height: 1rem;
 }
 
-.cardBorder{
+.cardBorder {
   border: 4px oldlace outset;
   /* box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2); */
-  box-shadow: 2px 2px red, -1em 0 .4em olive;
+  box-shadow: 2px 2px red, -1em 0 0.4em olive;
 }
 
-.button{
+.button {
   font-weight: 600;
   font-size: 1.5rem;
 }
 
-.searchInput{
+.searchInput {
   background-color: rgba(238, 237, 237, 0.993);
   color: #030617;
+
   border-radius: 30px;}
+
+  border-radius: 30px;
+}
+
 
 .series {
   font-family: Source Sans Pro, sans-serif;
   font-size: 1.7rem;
-  padding : 24px 24px 20px 10px;
+  padding: 24px 24px 20px 10px;
 }
 
 .seriesBtnGroup {
@@ -109,7 +115,6 @@ ul.social a:hover {
 .navbarTitle {
   font-family: Source Sans Pro, sans-serif;
   font-size: 2rem;
-
 }
 
 .modalImg{
