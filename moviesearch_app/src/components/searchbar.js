@@ -24,7 +24,7 @@ const SearchBar = ({ getSearchData }) => {
   // }
 
   return (
-    <Container>
+    <Container className='mt-5'>
       <Row>
         <InputGroup>
           <InputGroup.Prepend>

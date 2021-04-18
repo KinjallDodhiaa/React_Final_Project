@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Sidebardata } from "./sidebardata";
 import "../css/navbar.css";
 import { IconContext } from "react-icons";
+import { Container, Row } from "react-bootstrap";
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -19,19 +20,19 @@ const Navbar = () => {
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-          <h1 className="navbarTitle">S.F.K MOVIES ENTERTAINMENT</h1>
+          <h1 className="navbar-title">
+            <span className="logo-span">
+              <img className="logo" src="../images/logo1.png" alt="logo" />
+            </span>Entertainment</h1>
           <span>
             <Link to="/favorite">
               <BsIcons.BsFillStarFill size={40} />
             </Link>
           </span>
-          {/* <span className="logo-span">
-            <img className="logo" src="../images/logo1.png" alt="logo" />
-          </span> */}
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSidebar}>
-            <li className="navbar-toggle">
+            <li className="navbar-toggle nav-menu-icon">
               <Link to="#" className="menu-bars">
                 <AiIcons.AiOutlineClose />
               </Link>

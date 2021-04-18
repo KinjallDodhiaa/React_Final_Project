@@ -36,6 +36,7 @@ const SeriesGallery = (props) => {
      const addBtnFav = (elm) => {
        props.addToFavorite(elm);
      };
+
   switch (props.data.status) {
     case "START":
       return <h1>LOADING...</h1>;
@@ -47,36 +48,43 @@ const SeriesGallery = (props) => {
           <Row>
             {props.data.data.map((elm, idx) =>
               elm.Type === "series" ? (
-                <Col key={idx} className="p-3" lg="3" md="3" sm="1">
-                  <Card className="cardBorder" style={{ width: "15rem" }}>
+                <Col
+                  key={idx}
+                  className="mt-3 mb-3"
+                  lg="3"
+                  md="4"
+                  sm="12"
+                  xs="12"
+                >
+                  <Card className="m-auto" style={{ width: "14rem" }}>
                     <Card.Img
-                      className="objectfit"
                       variant="top"
                       src={elm.Poster}
                       height="300"
+                      className="objectfit"
                       onClick={() =>
                         seriesShow(elm.Poster, elm.Title, elm.Type, elm.Year)
                       }
                     />
                     <Card.Body className="cardBodyColor">
-                      <Card.Title className="text-center cardTitleHeight">
-                        <h6>{elm.Title}</h6>
+                      <Card.Title
+                        style={{ height: "2.2rem" }}
+                        className="text-center"
+                      >
+                        <p style={{ fontSize: "14px" }}>{elm.Title}</p>
                       </Card.Title>
-
-                      <Card.Text className="text-center">{elm.Type}</Card.Text>
+                      {!props.favList.some((e) => e.imdbID === elm.imdbID) ? (
+                        <BsIcons.BsFillStarFill
+                          style={{ cursor: "pointer" }}
+                          size={25}
+                          onClick={() => {
+                            addBtnFav(elm);
+                          }}
+                        />
+                      ) : (
+                        <BsIcons.BsBookmarkCheck size={25} />
+                      )}
                     </Card.Body>
-                    {!props.favList.some((e) => e.imdbID === elm.imdbID) ? (
-                      <BsIcons.BsFillStarFill
-                        className="fav-icon"
-                        onClick={() => {
-                          addBtnFav(elm);
-                        }}
-                      />
-                    ) : (
-                      <BsIcons.BsBookmarkCheck className="bookmark-icon" />
-                    )}
-
-                    {/* <Card.Text className="text-center">{elm.Type}</Card.Text> */}
                   </Card>
                 </Col>
               ) : null
@@ -118,4 +126,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps,{addToFavorite})(SeriesGallery);
+export default connect(mapStateToProps, { addToFavorite })(SeriesGallery);
