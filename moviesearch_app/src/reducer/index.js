@@ -74,7 +74,6 @@ const favoriteReducer = (results = favoriteList, action) => {
   if (action.type === "ADD_TO_FAVORITE") {
     //  favoriteList = { data: action.payload };
       favoriteList.push(action.payload);
-    console.log(favoriteList);
     return [...favoriteList];
   }
   if (action.type === "REMOVE_FAVORITE") {
@@ -83,6 +82,7 @@ const favoriteReducer = (results = favoriteList, action) => {
   }
   return results;
 };
+
 
 export default combineReducers({
   results: searchReducer,

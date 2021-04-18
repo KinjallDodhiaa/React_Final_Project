@@ -18,28 +18,39 @@ const MovieGallery = (props) => {
         <Container>
           <Row>
             {props.data.data.map((elm, idx) => (
-              <Col key={idx} className="p-3" lg="4" md="3" sm="1">
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img variant="top" src={elm.Poster} height="250" />
-                  <Card.Body>
+              <Col
+                key={idx}
+                className="mt-3 mb-3"
+                lg="3"
+                md="4"
+                sm="12"
+                xs="12"
+              >
+                <Card className="m-auto" style={{ width: "14rem" }}>
+                  <Card.Img
+                    className="objectfit"
+                    variant="top"
+                    src={elm.Poster}
+                    height="300"
+                  />
+                  <Card.Body className="cardBodyColor">
                     <Card.Title
-                      style={{ height: "3rem" }}
+                      style={{ height: "2.2rem" }}
                       className="text-center"
                     >
-                      {elm.Title}
+                      <p style={{ fontSize: "14px" }}>{elm.Title}</p>
                     </Card.Title>
-                    <Card.Text className="text-center">{elm.Type}</Card.Text>
                     {!props.favList.some((e) => e.imdbID === elm.imdbID) ? (
                       <BsIcons.BsFillStarFill
-                        className="fav-icon"
+                        style={{ cursor: "pointer" }}
+                        size={25}
                         onClick={() => {
                           addBtnFav(elm);
                         }}
                       />
                     ) : (
-                      <BsIcons.BsBookmarkCheck className="bookmark-icon" />
+                      <BsIcons.BsBookmarkCheck size={25} />
                     )}
-                    {console.log(props.favList)}
                   </Card.Body>
                 </Card>
               </Col>

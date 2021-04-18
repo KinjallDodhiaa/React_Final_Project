@@ -67,6 +67,7 @@ export const getSeriesData = (series) => {
   };
 };
 
+
 export const addToFavorite = (elm) => {
   return {
     type: "ADD_TO_FAVORITE",
@@ -79,3 +80,18 @@ export const removeFavorite = (idx) => {
     payload: idx,
   };
 };
+
+export const addToFav = (elm,idx) =>{
+  return{
+    type:'ADD_TO_FAV',
+    payload:{elm,idx}
+  }
+}
+
+export const selectIndexAction = (idx) => {
+  return {
+    type: "SELECT_INDEX",
+    payload: idx
+  };
+}
+
