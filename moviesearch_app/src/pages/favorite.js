@@ -2,7 +2,6 @@ import React from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import {removeFavorite} from "../action"
-import * as TiIcons from "react-icons/ti";
 const Favorite = (props) => {
   const removeFav = (idx) => {
     props.removeFavorite(idx);

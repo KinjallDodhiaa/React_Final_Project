@@ -33,13 +33,10 @@ const SearchGallery = (props) => {
       return (
         <Container>
           <Row className="mt-2">
-            {props.data.data.map((elm, idx) => (
+            {props.data.data.map((elm, idx) => (  
               <Col key={idx} xs={12} sm={12} md={4} lg={3} className="mt-2">
                 <Card className="m-auto" style={{ width: "14.7rem" }}>
                   <Card.Img
-                    onClick={() =>
-                      previewShow(elm.Poster, elm.Title, elm.Type, elm.Year)
-                    }
                     onClick={() =>
                       previewShow(elm.Poster, elm.Title, elm.Type, elm.Year)
                     }

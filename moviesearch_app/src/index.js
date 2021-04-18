@@ -31,8 +31,8 @@ const App = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path='/search'>
-          <Search/>
+        <Route path="/search">
+          <Search />
         </Route>
         <Route path="/movies">
           <Movies />
@@ -41,7 +41,7 @@ const App = () => {
           <Series />
         </Route>
         <Route path="/favorite">
-          <Favorite/>
+          <Favorite />
         </Route>
       </Switch>
     </Router>
