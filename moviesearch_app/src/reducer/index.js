@@ -84,6 +84,7 @@ const favoriteReducer = (results = favoriteList, action) => {
   return results;
 };
 
+
 export default combineReducers({
   results: searchReducer,
   movieResults: movieSearchReducer,

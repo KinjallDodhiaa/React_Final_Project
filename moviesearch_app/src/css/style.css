@@ -31,7 +31,7 @@ h1 {
   text-align: center;
 }
 
-/* Footer */
+/* Footer Start */
 
 footer {
   background-color: #030617;
@@ -53,7 +53,14 @@ ul.social li {
 ul.social a:hover {
   color: #62adeb;
 }
+
  .searchbar {
+
+
+/* Footer End */
+
+.searchbar {
+
   border-radius: 30px;
 }
 
@@ -72,7 +79,11 @@ ul.social a:hover {
 
 .cardBorder {
   border: 4px oldlace outset;
+
   /* box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2); */
+
+  /* box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2); */
+
   box-shadow: 2px 2px red, -1em 0 0.4em olive;
 }
 
@@ -96,7 +107,7 @@ ul.social a:hover {
 .seriesBtnGroup {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: left;
 }
 
 .seriesNavbar {
@@ -108,6 +119,7 @@ ul.social a:hover {
 .navbarTitle {
   font-family: Source Sans Pro, sans-serif;
   font-size: 2rem;
+
 }
 .fav-icon:hover {
   cursor: pointer;
@@ -119,3 +131,17 @@ ul.social a:hover {
   font-size: 2.8vw;
 }
  
+
+}
+
+/* Modal */
+.modalImg {
+  margin: 0 auto;
+  width: 25rem;
+  height: 22rem;
+}
+
+/* .modal {
+  background-color: blue;
+} */
+
