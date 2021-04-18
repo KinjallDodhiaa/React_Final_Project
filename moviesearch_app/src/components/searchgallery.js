@@ -1,8 +1,21 @@
+
+import React from "react";
+import { Card, Container, Row, Col, Button } from "react-bootstrap";
+
 import React, { useState } from "react";
 import { Card, Container, Row, Col, Modal, Button, Image } from "react-bootstrap";
+
 import { connect } from "react-redux";
+import { addToFavorite } from "../action";
+import * as BsIcons from "react-icons/bs";
 
 const SearchGallery = (props) => {
+
+  const addBtnFav = (elm) => {
+    props.addToFavorite(elm);
+    console.log("this is add fav" + elm);
+  };
+
 
   const [preview, setPreview] = useState({ show: false, moviePreview: '', title: '', type: '', year: '' });
 
@@ -12,6 +25,7 @@ const SearchGallery = (props) => {
     setPreview({ show: true, moviePreview: poster, title: title, type: type, year: year })
 
   }
+
 
   switch (props.data.status) {
     case "START":
@@ -24,7 +38,7 @@ const SearchGallery = (props) => {
           <Row>
             {props.data.data.map((elm, idx) => (
               <Col key={idx} className="p-3" lg="3" md="3" sm="1">
-                <Card className='cardBorder' style={{ width: "15rem" }}>
+                <Card className="cardBorder" style={{ width: "15rem" }}>
                   <Card.Img
                     onClick={() => previewShow(elm.Poster, elm.Title, elm.Type, elm.Year)}
                     className="objectfit"
@@ -36,6 +50,17 @@ const SearchGallery = (props) => {
                     <Card.Title className="text-center cardTitleHeight">
                       <h6>{elm.Title}</h6>
                     </Card.Title>
+                    {!props.favList.some((e) => e.imdbID === elm.imdbID) ? (
+                      <BsIcons.BsFillStarFill
+                        className="fav-icon"
+                        onClick={() => {
+                          addBtnFav(elm);
+                        }}
+                      />
+                    ) : (
+                      <BsIcons.BsBookmarkCheck className="bookmark-icon" />
+                    )}
+
                     {/* <Card.Text className="text-center">{elm.Type}</Card.Text> */}
                   </Card.Body>
                 </Card>
@@ -68,7 +93,8 @@ const SearchGallery = (props) => {
 const mapStateToProps = (state) => {
   return {
     data: state.results,
+    favList: state.favoriteResults,
   };
 };
 
-export default connect(mapStateToProps)(SearchGallery);
+export default connect(mapStateToProps, { addToFavorite })(SearchGallery);
