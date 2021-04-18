@@ -47,7 +47,6 @@ const SeriesGallery = (props) => {
         <Container>
           <Row>
             {props.data.data.map((elm, idx) =>
-              elm.Type === "series" ? (
                 <Col
                   key={idx}
                   className="mt-3 mb-3"
@@ -87,7 +86,7 @@ const SeriesGallery = (props) => {
                     </Card.Body>
                   </Card>
                 </Col>
-              ) : null
+              
             )}
           </Row>
           <Modal show={series.show} onHide={handleClose}>
