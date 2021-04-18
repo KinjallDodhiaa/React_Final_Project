@@ -45,6 +45,31 @@ const SeriesGallery = (props) => {
       return (
         <Container>
           <Row>
+
+            {props.data.data.map((elm, idx) => (
+              <Col
+                key={idx}
+                className="mt-3 mb-3"
+                lg="3"
+                md="4"
+                sm="12"
+                xs="12"
+              >
+                <Card className="m-auto" style={{ width: "14rem" }}>
+                  <Card.Img 
+                  variant="top" 
+                  src={elm.Poster} 
+                  height="300"
+                  className="objectfit"
+                   />
+                  <Card.Body className="cardBodyColor">
+                    <Card.Title
+                      style={{ height: "2.2rem" }}
+                      className="text-center"
+                    >
+                      <p style={{ fontSize: "14px" }}>{elm.Title}</p>
+                    </Card.Title>
+
             {props.data.data.map((elm, idx) =>
               elm.Type === "series" ? (
                 <Col key={idx} className="p-3" lg="3" md="3" sm="1">
@@ -69,16 +94,24 @@ const SeriesGallery = (props) => {
 
                     </Card.Body>
 
+
                     {!props.favList.some((e) => e.imdbID === elm.imdbID) ? (
                       <BsIcons.BsFillStarFill
-                        className="fav-icon"
+                        style={{ cursor: "pointer" }}
+                        size={25}
                         onClick={() => {
                           addBtnFav(elm);
                         }}
                       />
                     ) : (
-                      <BsIcons.BsBookmarkCheck className="bookmark-icon" />
+                      <BsIcons.BsBookmarkCheck size={25} />
                     )}
+
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+
 
                 
 
@@ -92,6 +125,7 @@ const SeriesGallery = (props) => {
                 </Col>
               ) : null
             )}
+
           </Row>
           <Modal show={series.show} onHide={handleClose}>
             <Modal.Header

@@ -10,11 +10,10 @@ import {
   Image,
 } from "react-bootstrap";
 
-import { connect } from "react-redux";
-import { addToFavorite } from "../action";
-import * as BsIcons from "react-icons/bs";
 
+import { connect } from "react-redux";
 const SearchGallery = (props) => {
+
   const addBtnFav = (elm) => {
     props.addToFavorite(elm);
     console.log("this is add fav" + elm);
@@ -63,9 +62,11 @@ const SearchGallery = (props) => {
                     onClick={() =>
                       previewShow(elm.Poster, elm.Title, elm.Type, elm.Year)
                     }
+
                     onClick={() =>
                       previewShow(elm.Poster, elm.Title, elm.Type, elm.Year)
                     }
+
                     className="objectfit"
                     variant="top"
                     src={elm.Poster}
@@ -78,6 +79,7 @@ const SearchGallery = (props) => {
                     >
                       <p style={{ fontSize: "14px" }}>{elm.Title}</p>
                     </Card.Title>
+
                     {!props.favList.some((e) => e.imdbID === elm.imdbID) ? (
                       <BsIcons.BsFillStarFill
                         style={{ cursor: "pointer" }}
@@ -90,12 +92,22 @@ const SearchGallery = (props) => {
                       <BsIcons.BsBookmarkCheck size={25} />
                     )}
 
+
                     {/* <Card.Text className="text-center">{elm.Type}</Card.Text> */}
                   </Card.Body>
                 </Card>
               </Col>
             ))}
           </Row>
+
+          <Modal size="sm" show={preview.show} onHide={handleClose}>
+            <Modal.Header>
+              <Image className="modalImg" fluid src={preview.moviePreview} />
+            </Modal.Header>
+            <Modal.Body>
+              <h3>{preview.title}</h3>
+              <p>{preview.year}</p>
+
           <Modal show={preview.show} onHide={handleClose}>
             <Modal.Header style={{ backgroundColor: "#030617" }}>
               <Image className="modalImg" fluid src={preview.moviePreview} />
@@ -104,6 +116,7 @@ const SearchGallery = (props) => {
               <Modal.Title>{preview.title}</Modal.Title>
               <p>{`Type: ${preview.type}`}</p>
               <p>{`Year: ${preview.year}`}</p>
+
             </Modal.Body>
             <Modal.Footer className="cardBodyColor">
               <Button
@@ -121,12 +134,9 @@ const SearchGallery = (props) => {
       return null;
   }
 };
-
 const mapStateToProps = (state) => {
   return {
     data: state.results,
-    favList: state.favoriteResults,
   };
 };
-
-export default connect(mapStateToProps, { addToFavorite })(SearchGallery);
+export default connect(mapStateToProps)(SearchGallery);

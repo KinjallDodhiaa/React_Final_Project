@@ -47,6 +47,7 @@ const MovieGallery = (props) => {
           <Row>
             {props.data.data.map((elm, idx) => (
 
+
               <Col
                 key={idx}
                 className="mt-3 mb-3"
@@ -95,8 +96,14 @@ const MovieGallery = (props) => {
                     )}
                   </Card.Body>
                 </Card>
+
+              </Col>)
+            )}
+
+
               </Col>
             ))}
+
           </Row>
 
           <Modal show={movie.show} onHide={handleClose}>
