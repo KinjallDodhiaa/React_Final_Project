@@ -2,6 +2,7 @@ import React from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as MdIcons from "react-icons/md";
+import * as BsIcons from "react-icons/bs";
 
 export const Sidebardata = [
   {
@@ -26,6 +27,12 @@ export const Sidebardata = [
     title: "Series",
     path: "/series",
     icon: <MdIcons.MdLocalMovies />,
+    cName: "nav-text",
+  },
+  {
+    title: "Favorite",
+    path: "/favorite",
+    icon: <BsIcons.BsFillStarFill />,
     cName: "nav-text",
   },
 ];

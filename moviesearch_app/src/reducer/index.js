@@ -18,6 +18,7 @@ const searchReducer = (results = searchResult, action) => {
     case "FAILED":
       searchResult = { data: [], status: "FAILED" };
       return { ...searchResult };
+
     default:
       return results;
   }
@@ -33,14 +34,14 @@ const movieSearchReducer = (results = movieSearchResult, action) => {
 
   switch (action.type) {
     case "MOVIE_START":
-      searchResult = { data: [], status: "START" };
-      return { ...searchResult };
+      movieSearchResult = { data: [], status: "START" };
+      return { ...movieSearchResult };
     case "MOVIE_SUCCESS":
-      searchResult = { data: action.payload.Search, status: "SUCCESS" };
-      return { ...searchResult };
+      movieSearchResult = { data: action.payload.Search, status: "SUCCESS" };
+      return { ...movieSearchResult };
     case "MOVIE_FAILED":
-      searchResult = { data: [], status: "FAILED" };
-      return { ...searchResult };
+      movieSearchResult = { data: [], status: "FAILED" };
+      return { ...movieSearchResult };
     default:
       return results;
   }
@@ -56,17 +57,31 @@ const seriesSearchReducer = (results = seriesSearchResult, action) => {
 
   switch (action.type) {
     case "SERIES_START":
-      searchResult = { data: [], status: "START" };
-      return { ...searchResult };
+      seriesSearchResult = { data: [], status: "START" };
+      return { ...seriesSearchResult };
     case "SERIES_SUCCESS":
-      searchResult = { data: action.payload.Search, status: "SUCCESS" };
-      return { ...searchResult };
+      seriesSearchResult = { data: action.payload.Search, status: "SUCCESS" };
+      return { ...seriesSearchResult };
     case "SERIES_FAILED":
-      searchResult = { data: [], status: "FAILED" };
-      return { ...searchResult };
+      seriesSearchResult = { data: [], status: "FAILED" };
+      return { ...seriesSearchResult };
     default:
       return results;
   }
+};
+let favoriteList = [];
+const favoriteReducer = (results = favoriteList, action) => {
+  if (action.type === "ADD_TO_FAVORITE") {
+    //  favoriteList = { data: action.payload };
+      favoriteList.push(action.payload);
+    console.log(favoriteList);
+    return [...favoriteList];
+  }
+  if (action.type === "REMOVE_FAVORITE") {
+    favoriteList.splice(action.payload, 1);
+    return [...favoriteList];
+  }
+  return results;
 };
 
 
@@ -74,4 +89,5 @@ export default combineReducers({
   results: searchReducer,
   movieResults: movieSearchReducer,
   seriesResults: seriesSearchReducer,
+  favoriteResults: favoriteReducer,
 });
