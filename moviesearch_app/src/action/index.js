@@ -1,4 +1,4 @@
-import { getResults } from "../api";
+import { getResults, getSeriesResults } from "../api";
 import { getMovieResults } from "../api";
 
 export const getSearchData = (result) => {
@@ -51,7 +51,7 @@ export const getSeriesData = (series) => {
       type: "SERIES_START",
       payload: [],
     });
-    getResults(series)
+    getSeriesResults(series)
       .then((data) => {
         dispatch({
           type: "SERIES_SUCCESS",
@@ -81,12 +81,6 @@ export const removeFavorite = (idx) => {
   };
 };
 
-export const addToFav = (elm,idx) =>{
-  return{
-    type:'ADD_TO_FAV',
-    payload:{elm,idx}
-  }
-}
 
 export const selectIndexAction = (idx) => {
   return {
