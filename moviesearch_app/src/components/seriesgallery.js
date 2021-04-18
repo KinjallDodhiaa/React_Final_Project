@@ -41,7 +41,7 @@ const SeriesGallery = (props) => {
                     ) : (
                       <BsIcons.BsBookmarkCheck className="bookmark-icon" />
                     )}
-                    />
+                   
                   </Card>
                 </Col>
               ) : null
