@@ -1,4 +1,4 @@
-  import React from "react";
+import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 
@@ -14,18 +14,20 @@ const SeriesGallery = (props) => {
           <Row>
             {props.data.data.map((elm, idx) =>
               elm.Type === "series" ? (
-                <Col key={idx} className="p-3" lg="4" md="3" sm="1">
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={elm.Poster} height="250" />
-                    {/* <Card.Body>
-                      <Card.Title
-                        style={{ height: "0.8rem"}}
-                        className="text-center"
-                      >
-                        {elm.Title}
+                <Col key={idx} className="p-3" lg="3" md="3" sm="1">
+                  <Card className='cardBorder' style={{ width: "15rem" }}>
+                    <Card.Img
+                      className="objectfit"
+                      variant="top"
+                      src={elm.Poster}
+                      height="300"
+                    />
+                    <Card.Body className="cardBodyColor">
+                      <Card.Title className="text-center cardTitleHeight">
+                        <h6>{elm.Title}</h6>
                       </Card.Title>
-                      <Card.Text className="text-center">{elm.Type}</Card.Text>
-                    </Card.Body> */}
+                      {/* <Card.Text className="text-center">{elm.Type}</Card.Text> */}
+                    </Card.Body>
                   </Card>
                 </Col>
               ) : null
