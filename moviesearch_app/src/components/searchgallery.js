@@ -33,8 +33,9 @@ const SearchGallery = (props) => {
       return (
         <Container>
           <Row className="mt-2">
+          
             
-            {props.data.data.map((elm, idx) => ( 
+            {props.data.data ? props.data.data.map((elm, idx) => ( 
                
               <Col key={idx} xs={12} sm={12} md={4} lg={3} className="mt-2">
                 <Card className="m-auto" style={{ width: "14.7rem" }}>
@@ -70,7 +71,7 @@ const SearchGallery = (props) => {
                   </Card.Body>
                 </Card>
               </Col>
-            ))}
+            )):  <h1>Movie not available</h1>} 
           </Row>
           <Modal show={preview.show} onHide={handleClose}>
             <Modal.Header style={{ backgroundColor: "#030617" }}>

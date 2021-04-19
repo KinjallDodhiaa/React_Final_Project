@@ -1,5 +1,4 @@
-import { getResults, getSeriesResults } from "../api";
-import { getMovieResults } from "../api";
+import { getResults, getSeriesResults, getMovieResults } from "../api";
 
 export const getSearchData = (result) => {
   return (dispatch) => {
