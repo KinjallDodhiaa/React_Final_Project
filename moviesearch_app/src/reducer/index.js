@@ -6,7 +6,7 @@ let searchResult = {
 };
 
 const searchReducer = (results = searchResult, action) => {
-  console.log(action);
+  console.log(action.type);
 
   switch (action.type) {
     case "START":
